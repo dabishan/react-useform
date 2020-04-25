@@ -1,0 +1,28 @@
+{
+  "name": "react-useform",
+  "version": "1.0.0",
+  "description": "Lightweight Form Library for React using Hooks",
+  "main": "dist/index.js",
+  "author": "dabishan",
+  "license": "ISC",
+  "keywords": [
+    "react",
+    "hooks",
+    "forms",
+    "form",
+    "validation"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "prepublish": "tsc"
+  },
+  "types": "dist/index.d.ts",
+  "devDependencies": {
+    "@types/react": "^16.9.34",
+    "react": "^16.13.1",
+    "typescript": "^3.8.3"
+  },
+  "peerDependencies": {
+    "react": "^16.8.0"
+  }
+}

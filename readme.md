@@ -12,13 +12,13 @@ Currently it supports the following feature:
 ## Installation
 You can install it as a npm package:
 ```
-npm install --save react-useform
+npm install --save @cecore/react-useform
 ```
 
 ## Usage
 Import useForm to start:
 ```
-import { useForm } from 'react-useform';
+import { useForm } from '@cecore/react-useform';
 ```
 
 You can initialize useForm with:
@@ -51,6 +51,24 @@ The `usename`, `password`, `gender` have all you need to start using them in you
     
     <Button disabled={isPristine || !isValid} type="submit">Submit</Button>
 </form>
+
 ```
+## Custom Validation
 
+```
+const validatePassword: ValidationFunc = (value) => {
+    if (value.length < 6) {
+        return 'Password must be at list 6 character long';
+    }
 
+    return ''
+}
+```
+And you can pass this custom function when u define your input.
+```
+const password = useFormInput('password', '', {
+	required: 'Password is required',
+    validateUsing: validatePassword
+});
+```
+Note: You can pass a list of validation functions with `validateUsing`. That allows you to create reusable function, that can be combined per use case.
